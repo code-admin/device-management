@@ -130,6 +130,7 @@
         font-size: 11px;
         margin: 21px 24px;
         max-width: 1366px;
+        min-height: 30px;
 
         .first-title {
             display: flex;
@@ -211,6 +212,7 @@
 
     }
     .middleRow{
+        min-height: 540px;
         padding: 0 20px;
         display: flex;
         .leftside{
@@ -219,7 +221,7 @@
             box-sizing: content-box
         }
         .doughnutCharts{
-            height: 280px;
+            min-height: 280px;
             padding: 8px 5px;
             margin-bottom: 20px;
             display: flex;
@@ -252,9 +254,9 @@
 
     .endRow {
         padding: 20px;
-        height: 210px;
+        min-height: 210px;
         .outBorder {
-            height: 168px;
+            height: 138px;
             display: flex;
             > div {
                 flex-basis: 25%;
