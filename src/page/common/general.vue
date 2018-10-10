@@ -89,12 +89,12 @@
                     time: '8:45',
                     type: '电表',
                     policeType: '离线',
-                    address: 'XXXXX'
+                    address: '苏州市...'
                 }, {
                     time: '8:21',
                     type: '烟感',
                     policeType: '低电量',
-                    address: '****'
+                    address: '上海市...'
                 }]
             }
         },
