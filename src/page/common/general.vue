@@ -1,8 +1,9 @@
 <template>
-    <div class="generaldiv">
-        <div class="headRow">
-            <div class="first-title">
-                <div style="text-align: left"><img src="@/assets/logo.png" alt="">智能设备管理平台</div>
+<div class="generaldiv">
+    <div class="headRow">
+
+        <div class="first-title">
+            <div style="text-align: left"><img src="@/assets/logo.png" alt="">智能设备管理平台</div>
             </div>
             <div>
                 <div class="info-left one">电表设备总量</div>
@@ -21,6 +22,7 @@
                 <div class="info-right"><span class="color4">1,201</span>/台</div>
             </div>
         </div>
+
         <div class="middleRow">
             <div class="leftside">
                 <div class="outBorder doughnutCharts">
@@ -45,73 +47,111 @@
                 <chart-map chartId='c06'></chart-map>
             </div>
         </div>
+
         <div class="endRow">
             <div class="outBorder">
-                <bar-simple chartId='c05' title="电量图" ></bar-simple>
-                <line-chart chartId='c07' title="井盖告警" ></line-chart>
-                <line-chart chartId='c08' title="烟感报警" ></line-chart>
-                <line-chart chartId='c09' title="燃气泄露报警" ></line-chart>
+                <bar-simple chartId='c05' title="电量图"></bar-simple>
+                <line-chart chartId='c07' title="井盖告警"></line-chart>
+                <line-chart chartId='c08' title="烟感报警"></line-chart>
+                <line-chart chartId='c09' title="燃气泄露报警"></line-chart>
             </div>
         </div>
     </div>
-</template>
-<script>
-    import doughnutChart from '@/components/charts/doughnut-chart'
-    import barSimple from '@/components/charts/bar-simple'
-    import chartMap from '@/components/charts/chart-map'
-    import lineChart from '@/components/charts/line-chart'
-    import charTable from '@/components/charts/char-table'
 
-    export default {
-        components: {doughnutChart, barSimple, chartMap, lineChart, charTable},
-        data() {
-            return {
-                firstList: [
-                    {value: 45, name: '正常'},
-                    {value: 55, name: '离线'},
-                ],
-                secondList: [
-                    {value: 20, name: '正常'},
-                    {value: 32, name: '低电量'},
-                    {value: 48, name: '离线'},
-                ],
-                thirdList: [
-                    {value: 28, name: '正常'},
-                    {value: 32, name: '低电量'},
-                    {value: 40, name: '离线'},
-                ],
-                fourthList: [
-                    {value: 28, name: '正常'},
-                    {value: 32, name: '低电量'},
-                    {value: 40, name: '离线'},
-                ],
-                mainInfo: [{
-                    time: '8:45',
-                    type: '电表',
-                    policeType: '离线',
-                    address: '苏州市...'
-                }, {
-                    time: '8:21',
-                    type: '烟感',
-                    policeType: '低电量',
-                    address: '上海市...'
-                }]
-            }
-        },
-        methods: {}
+</template>
+
+<script>
+import doughnutChart from '@/components/charts/doughnut-chart'
+import barSimple from '@/components/charts/bar-simple'
+import chartMap from '@/components/charts/chart-map'
+import lineChart from '@/components/charts/line-chart'
+import charTable from '@/components/charts/char-table'
+
+export default {
+    components: {
+        doughnutChart,
+        barSimple,
+        chartMap,
+        lineChart,
+        charTable
+    },
+    data() {
+        return {
+            firstList: [{
+                    value: 45,
+                    name: '正常'
+                },
+                {
+                    value: 55,
+                    name: '离线'
+                },
+            ],
+            secondList: [{
+                    value: 20,
+                    name: '正常'
+                },
+                {
+                    value: 32,
+                    name: '低电量'
+                },
+                {
+                    value: 48,
+                    name: '离线'
+                },
+            ],
+            thirdList: [{
+                    value: 28,
+                    name: '正常'
+                },
+                {
+                    value: 32,
+                    name: '低电量'
+                },
+                {
+                    value: 40,
+                    name: '离线'
+                },
+            ],
+            fourthList: [{
+                    value: 28,
+                    name: '正常'
+                },
+                {
+                    value: 32,
+                    name: '低电量'
+                },
+                {
+                    value: 40,
+                    name: '离线'
+                },
+            ],
+            mainInfo: [{
+                time: '8:45',
+                type: '电表',
+                policeType: '离线',
+                address: '苏州市...'
+            }, {
+                time: '8:21',
+                type: '烟感',
+                policeType: '低电量',
+                address: '上海市...'
+            }]
+        }
+    },
+    methods: {}
 }
 </script>
-<style lang="scss" scoped>
 
-.generaldiv{
+<style lang="scss" scoped>
+.generaldiv {
     height: 100%;
     width: 100%;
     min-height: 800px;
-    background: rgb(45,62,80);
+    background: rgb(45, 62, 80);
     background-size: 100% 100%;
     display: flex;
     position: relative;
-    flex-direction:column;
+    flex-direction: column;
 
     .outBorder {
         color: #3CBFA6;
@@ -120,7 +160,7 @@
         box-shadow: inset 0 0 12px 3px #36B09E;
     }
 
-    > .el-row {
+    >.el-row {
         width: 100%;
     }
 
@@ -138,6 +178,7 @@
             font-size: 24px;
             font-weight: 700;
             line-height: 30px;
+
             img {
                 width: auto;
                 height: 25px;
@@ -147,16 +188,18 @@
             }
         }
 
-        > div {
+        >div {
             display: flex;
             flex-basis: 50%;
             align-items: center;
             justify-content: center;
-            > div {
+
+            >div {
                 margin: auto 8px;
                 line-height: 30px;
             }
         }
+
         .info-left {
             margin-top: 0;
             color: #D8D8D8;
@@ -177,30 +220,38 @@
                 display: inline-block;
                 background-image: linear-gradient(-90deg, #7FFED8 2%, #09BDFE 98%);
             }
+
             &.two:after {
                 background-image: linear-gradient(-90deg, #D4FC79 0%, #96E6A1 95%);
             }
+
             &.three:after {
                 background-image: linear-gradient(-90deg, #EEF2F3 0%, #8E9EAB 100%);
             }
+
             &.four:after {
                 background-image: linear-gradient(-90deg, #FCC687 0%, #F286A0 100%);
             }
         }
+
         .info-right {
             span {
                 &.color1 {
                     color: #09BDFE;
                 }
+
                 &.color2 {
                     color: #96E6A1;
                 }
+
                 &.color3 {
                     color: #8E9EAB;
                 }
+
                 &.color4 {
                     color: #F286A0;
                 }
+
                 line-height: 35px;
                 font-size: 22px;
                 margin-right: 4px;
@@ -210,15 +261,18 @@
         }
 
     }
-    .middleRow{
+
+    .middleRow {
         padding: 0 20px;
         display: flex;
-        .leftside{
+
+        .leftside {
             width: 430px;
             margin-right: 20px;
             box-sizing: content-box
         }
-        .doughnutCharts{
+
+        .doughnutCharts {
             height: 280px;
             padding: 8px 5px;
             margin-bottom: 20px;
@@ -227,7 +281,7 @@
             align-items: center;
             position: relative;
 
-            > div:first-child:after {
+            >div:first-child:after {
                 left: 5%;
                 bottom: 50%;
                 width: 90%;
@@ -237,30 +291,32 @@
                 border-radius: 2px;
                 background-color: rgba(54, 176, 158, .4);
             }
-            .dc-col{
+
+            .dc-col {
                 flex-basis: 50%;
             }
         }
-        .charTable{
+
+        .charTable {
             height: 180px;
             overflow: hidden;
         }
-        .mapView{
+
+        .mapView {
             flex-grow: 1
         }
     }
 
     .endRow {
         padding: 20px;
-        min-height: 210px;
         .outBorder {
             height: 138px;
             display: flex;
-            > div {
+
+            >div {
                 flex-basis: 25%;
             }
         }
     }
 }
 </style>
-
